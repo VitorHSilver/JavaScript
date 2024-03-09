@@ -4,11 +4,11 @@
 //      console.log(item);
 // });
 
+//convertendo o titulos para poder utilizar foreach
 const titulos = document.getElementsByClassName('titulo');
 const titulosArray = Array.from(titulos);
 
 titulosArray.forEach(function (item) {
-     //convertendo o titulos para poder utilizar foreach
      console.log(item);
 });
 // arrow function
