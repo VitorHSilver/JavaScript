@@ -1,0 +1,40 @@
+// Verifique a distância da primeira imagem
+// em relação ao topo da página
+const img = document.querySelector('img');
+const imgTop = img.offsetTop; // distancia do elemento até o top
+console.log(imgTop);
+// Retorne a soma da largura de todas as imagens
+function somaImagens() {
+     const todasImagens = document.querySelectorAll('img');
+     let soma = 0;
+     todasImagens.forEach((img) => {
+          // faço um loop , com soma zerado
+          soma += img.offsetWidth; // acrescento os valores de cada imagem ao soma depois mostro
+          console.log(img.offsetWidth);
+     });
+     console.log(soma);
+}
+window.onload = function () {
+     somaImagens(); // mostrando a função soma
+};
+// Verifique se os links da página possuem
+// o mínimo recomendado para telas utilizadas
+// com o dedo. (48px/48px de acordo com o google)
+const links = document.querySelectorAll('a');
+links.forEach((link) => {
+     const linkWitdth = link.offsetWidth;
+     const linkHeight = link.offsetHeight;
+     if (linkHeight >= 48 && linkWitdth >= 48) {
+          console.log(link, 'Possui boa acessibilidade');
+     } else {
+          console.log(link, 'Nào possui boa acessibilidade');
+     }
+});
+
+// Se o browser for menor que 720px,
+// adicione a classe menu-mobile ao menu
+const browserSmall = window.matchMedia('(max-width: 720px)').matches;
+if (browserSmall) {
+     const menu = document.querySelector('.menu');
+     menu.classList.add('menu mobile');
+}
