@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+     <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Forms</title>
+          <style>
+               body {
+                    margin: 0;
+                    padding: 0;
+               }
+               h1 {
+                    text-align: center;
+               }
+               label {
+                    display: block;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: bold;
+                    margin-bottom: 0.5rem;
+                    margin-top: 0.8rem;
+                    text-transform: capitalize;
+               }
+               form {
+                    max-width: 400px;
+                    margin: 0 auto;
+               }
+               input,
+               textarea {
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding: 0.5rem;
+                    border: 2px solid #000;
+                    font-size: 1rem;
+                    margin-bottom: 0.5rem;
+               }
+               textarea {
+                    height: 150px;
+               }
+               .invalido {
+                    border: 2px solid red;
+               }
+               .outros {
+                    margin-top: 14px;
+               }
+          </style>
+     </head>
+     <body>
+          <h1>Formulario</h1>
+          <form name="contato" id="contato">
+               <label for="nome">nome:</label>
+               <input type="text" name="nome" id="nome" />
+               <label for="email">email</label>
+               <input type="email" name="email" id="email" required />
+               <span class="erro"></span>
+               <label for="mensagem">mensagem</label>
+               <textarea name="mensagem" id="mensagem"></textarea>
+               <select name="cores" id="cores">
+                    <option value="gray">cinza</option>
+                    <option value="green">verde</option>
+               </select>
+               <label for="identidade">Possui Identidade?</label>
+               <input type="checkbox" value="identidade" id="identidade" />
+               
+               <div class="outros">
+                    <input type="color" />
+                    <input type="date" />
+                    <input type="number" />
+                    <input type="range" />
+                    <input type="password" />
+               </div>
+               
+               <label for="guitarra">Guitarra</label>
+               <input type="radio" id="guitarra" value="guitarra" name="instrumento" />
+
+               <label for="baixo">Baixo</label>
+               <input type="radio" id="baixo" value="baixo" name="instrumento" />
+
+          </form>
+          <span class="texto"></span>
+          <script src="./script-obj.js"></script>
+     </body>
+</html>
