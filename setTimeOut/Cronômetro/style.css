@@ -1,0 +1,68 @@
+:root{
+    --cordeTexto: #f2dc00;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    gap: 50px;
+}
+body {
+    background-image: url(./img/running.jpg) ;
+    background-repeat: no-repeat ;
+    background-size: cover;
+    height: 100vh;
+}
+body.active {
+    background-color: green;
+}
+button {
+    margin: 10px;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1.3rem;
+    border-radius: 4px;
+    border: solid 2px var(--cordeTexto);
+    color: black;
+}
+span{
+color: var(--cordeTexto);
+font-size: 4rem;
+
+}h1{
+    text-align: center;
+    color:var(--cordeTexto);
+    font-size: 4rem;
+}
+.rdp{
+    font-size: 2rem;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: var(--cordeTexto);
+    transition: .5s ease-out;
+  }
+  
+  a:hover::after {
+    width: 100%;
+  }
+@media(max-width: 1200px) {
+  body{
+    background-position: center ;
+  }   
+}
