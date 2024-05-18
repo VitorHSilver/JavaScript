@@ -1,77 +1,84 @@
 ## ButtonCreator
 
-*Crio uma função que recebe todos os valores e passa para um objeto*
+_Crio uma função que recebe todos os valores e passa para um objeto_
 
-     function  handleChange(event) {
-    
-    const  name  =  event.target.name;
-    
-    const  value  =  event.target.value;
-    
+    function handleChange(event) {
+
+    const name = event.target.name;
+    const value = event.target.value;
+
+
     handleStyle[name](value);
-    
+
     saveValues(name, value);
-    
+
+
     showCss();
-    
+
+
     }
 
-Depois pegos esses valores e chamo esse objeto onde é inserido name e value. 
+Depois pegos esses valores e chamo esse objeto onde é inserido name e value.
 
-    handleStyle[name](value);
+> handleStyle [name] (value);
 
-No objeto ira armazenar diversos elementos ondetodos serão aplicado no botão.
+No objeto ira armazenar diversos elementos onde todos serão aplicado no botão.
 
 nesse objeto vou criar functions que irão formatar seu elementos respectivos.
 
-*Quando é pego o valor, pegue a função que está dentro de `handleStyle` com o nome `texto` e execute-a com o valor fornecido.*
+_Quando é pego o valor, pegue a função que está dentro de `handleStyle` com o nome `texto` e execute-a com o valor fornecido._
 
+    const handleStyle = {
 
-    const  handleStyle  = {
-    
-    element:  btn,
-    
+    element: btn,
+
     texto(value) {
-    
-    this.element.innerHTML  =  value;
-    
-    	},
+    this.element.innerHTML = value;
+    },
     };
 
 ### Mostrando a descrições aplicadas
 
-    function  showCss() {
-    
-    cssText.innerHTML  =  '<span>'  +  
-    btn.style.cssText.split('; ')
-    .join(';</span><span>');
-    
-    }
+    function showCss() {
+
+        cssText.innerHTML = '<span>' +
+
+        btn.style.cssText.split('; ')
+
+        .join(';</span><span>');
+
+        }
 
 ## LocalStorage
 
-Aqui vou salvar os valores no localStorage, pegando os valores e assimilando name com valor 
+Aqui vou salvar os valores no localStorage, pegando os valores e assimilando name com valor
 
-    function  saveValues(name, value) {
-    localStorage[name] =  value;
+    function saveValues(name, value) {
+
+    localStorage[name] = value;
+
     }
 
 #### Agora é criado uma function que coloca os valores nos campos
 
-    function  setValues() {
-    
-    const  properties  =  Object.keys(localStorage);
-    
+    function setValues() {
+
+    const properties = Object.keys(localStorage);
+
     properties.forEach((propertie) => {
-    
+
     handleStyle[propertie](localStorage[propertie]);
-    
-    controles.elements[propertie].value  =  localStorage[propertie];
-    
+
+      controles.elements[propertie].value = localStorage[propertie];
+
     });
-    
+
     showCss();
-    
+
     }
-    
+
     setValues();
+
+# Button Creator
+
+![Print](buttonCreate.png)
