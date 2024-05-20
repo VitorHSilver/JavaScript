@@ -1,0 +1,32 @@
+/* Menu hamburguer de forma manual */
+
+/* menu oculto na resolução normal */
+.menu-mobile{
+    display: none; 
+}
+  @media (max-width:900px){
+    .menu-mobile{
+    display: flex;
+    background: #233;
+    border:none;
+    color: red;
+    padding: .5rem 1rem;
+    text-transform: uppercase;
+    font-family: 'IBM Flex Mono', monospace;
+    font-weight: bold;
+    color: #fff;
+    cursor:pointer;
+    margin: 10px;  
+    align-items: center;
+  
+  }.menu-mobile::before{
+    content: '';
+    display:inline-block;
+    height: 2px;
+    width:12px;
+    background: #fff;
+    box-shadow: 0 4px #fff, 0 -4px #fff;
+    margin-right: 4px;
+    
+  }
+}
