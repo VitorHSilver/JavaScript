@@ -56,5 +56,5 @@ function resetarTempo() {
      clearInterval(timer);
      textTempo.innerText = 0;
      i = 0;
-     start.removeAttribute('disabled', '');
+     start.removeAttribute('disabled');
 }
