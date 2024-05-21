@@ -8,17 +8,15 @@ assim retornando um erro ou a confirmação de uma ação assíncrona.
 normalmente é utilizado `resolve` `reject`
 
 ```js
-const promessa = new Promise((resolvido, rejeitado) => {
+     const promessa = new Promise((resolvido, rejeitado) => {
      let condicao = true;
      if (condicao) resolvido({ nome: 'Vitor', idade: 28 });
      else {
           rejeitado(Error('Um erro aconteceu na Promise'));
      }
 });
-
-console.log(promessa);
-
-promessa.then((resolucao) => console.log(resolucao));
+     console.log(promessa);
+     promessa.then((resolucao) => console.log(resolucao));
 ```
 
 ### THEN()
@@ -30,7 +28,7 @@ O poder das Promises está no método `then()` do seu protótipo. O Callback des
 O método `then()` retorna outra Promise. Podemos colocar then() após then() e fazer um encadeamento de promessas.
 
 ```js
-const promessa = new Promise((resolve, reject) => {
+     const promessa = new Promise((resolve, reject) => {
      resolve('Etapa 1');
 });
 
@@ -86,7 +84,7 @@ Podemos também utilizar dessa forma com a segundo argumento de then
 Retornará uma nova promise assim que todas as promises dentro dela forem resolvidas ou pelo menos uma rejeitada.
 
 ```js
-	const  login  =  new  Promise((resolve) => {
+    const  login  =  new  Promise((resolve) => {
     setTimeout(() => {
     resolve('Usuário logado');
 	    },1000);
@@ -112,9 +110,9 @@ Retornará uma nova promise assim que todas as promises dentro dela forem resolv
 Retornará uma nova promise assim que a primeira promise for resolvida ou rejeitada. Essa nova promise terá a resposta da primeira resolvida.
 
 ```js
-const carregouPrimeiro = Promise.race([login, dados]);
+    const carregouPrimeiro = Promise.race([login, dados]);
 
-carregouPrimeiro.then((resposta) => {
-     console.log(resposta);
+    carregouPrimeiro.then((resposta) => {
+    console.log(resposta);
 });
 ```
