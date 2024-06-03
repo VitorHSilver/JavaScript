@@ -1,0 +1,4 @@
+Olá mundo.
+
+Estou testando o retorno do fetch.
+Será que funcionou? sim.
