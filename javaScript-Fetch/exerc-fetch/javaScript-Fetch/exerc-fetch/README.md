@@ -1,43 +1,75 @@
-function handleClick(e) {
-e.preventDefault();
-const cep = document.getElementById('cep').value;
-buscaCep(cep);
-}
-btnCep.addEventListener('click', handleClick); // posso usar o keyup para que toda alteração aconteça uma mudança, mudar pelo input ao inves do btn.
+## Exercícios utilizando o .fetch 
 
-function buscaCep(cep) {
-fetch(`https://viacep.com.br/ws/${cep}/json/`).then((r) =>
-r.text().then((body) => {
-res.innerText = body;
-})
-);
-}
 
-// Utilizando a API https://blockchain.info/ticker
-// retorne no DOM o valor de compra da bitcoin and reais.
-// atualize este valor a cada 30s
-const res2 = document.querySelector('.res2');
+### Mostrando as informações do CEP digitado
 
-function atualizandoMoeda() {
-fetch('https://blockchain.info/ticker').then((r) =>
-r.json().then((btnJson) => {
-res2.innerText += `R$ ${btnJson.BRL.buy}`.replace('.', ',');
-})
-);
-}
-atualizandoMoeda();
+    function  handleClick(e) {
+    
+    e.preventDefault();
+    
+    const  cep  =  document.getElementById('cep').value;
+    
+    buscaCep(cep);
+    
+    }
 
-// Utilizando a API https://api.chucknorris.io/jokes/random
-// retorne uma piada randomica do chucknorris, toda vez que
-// clicar em próxima
-const btnProxima = document.querySelector('#joke');
-const paragrafoPiada = document.querySelector('.piadaSite');
+`btnCep.addEventListener('click', handleClick);` // posso usar o keyup para que toda alteração aconteça uma mudança, mudar pelo input ao inves do btn
 
-function puxarPiada() {
-fetch('https://api.chucknorris.io/jokes/random').then((r) =>
-r.json().then((piada) => {
-paragrafoPiada.innerText = piada.value;
-})
-);
-}
-btnProxima.addEventListener('click', puxarPiada);
+  
+
+    function  buscaCep(cep) {
+    
+    fetch(`https://viacep.com.br/ws/${cep}/json/`).then((r) =>
+    
+    r.text().then((body) =>
+    {
+    res.innerText  =  body;
+		    })
+	    );
+	}
+
+  
+### Utilizando API e recebendo valores do bitcoin
+Atualizando a cada 30 segundos.
+
+    const  res2  =  document.querySelector('.res2');
+    
+    function  atualizandoMoeda() {
+    
+    fetch('https://blockchain.info/ticker').then((r) =>
+    
+    r.json().then((btnJson) => {
+    
+    res2.innerText  +=  `R$ ${btnJson.BRL.buy}`.replace('.', ',');
+    
+    })
+    
+    );
+    
+    }
+    
+    atualizandoMoeda();
+
+  
+
+### Toda vez que clicar no botão é atualizado a piada
+
+    const  btnProxima  =  document.querySelector('#joke');
+    
+    const  paragrafoPiada  =  document.querySelector('.piadaSite');
+    
+    function  puxarPiada() {
+    
+    fetch('https://api.chucknorris.io/jokes/random').then((r ) =>
+    
+    r.json().then((piada) => {
+    
+    paragrafoPiada.innerText  =  piada.value;
+    
+			    })
+    
+		    );
+    
+	   }
+    
+    btnProxima.addEventListener('click', puxarPiada);
