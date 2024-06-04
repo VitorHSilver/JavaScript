@@ -2,7 +2,7 @@
 
 
 ### Mostrando as informações do CEP digitado
-
+```js
     function  handleClick(e) {
     
     e.preventDefault();
@@ -27,11 +27,11 @@
 		    })
 	    );
 	}
-
+```
   
 ### Utilizando API e recebendo valores do bitcoin
 Atualizando a cada 30 segundos.
-
+```js
     const  res2  =  document.querySelector('.res2');
     
     function  atualizandoMoeda() {
@@ -51,9 +51,9 @@ Atualizando a cada 30 segundos.
     atualizandoMoeda();
 
   
-
-### Toda vez que clicar no botão é atualizado a piada
-
+```
+##```js# Toda vez que clicar no botão é atualizado a piada
+```js
     const  btnProxima  =  document.querySelector('#joke');
     
     const  paragrafoPiada  =  document.querySelector('.piadaSite');
@@ -73,3 +73,4 @@ Atualizando a cada 30 segundos.
 	   }
     
     btnProxima.addEventListener('click', puxarPiada);
+```
