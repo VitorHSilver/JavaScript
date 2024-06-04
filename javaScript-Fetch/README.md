@@ -2,11 +2,13 @@
 
 fornece para acessar e manipular partes do pipeline HTTP, tais como os pedidos e respostas.
 
+```js
     fetch('./arquivo.txt').then(function(response) {
       return response.text();
     }).then(function(corpo) {
       console.log(corpo);
     });
+```
 
 Posso utilizar o fetch para pegar os dados de uma requisição, ou seja consigo pegar a resposta dessa forma:
 é usado um response como resposta, dela eu pego um .text()
@@ -16,6 +18,7 @@ e dessa resposta faço um .then com argumento e mostro ele no log.
 
 Pegando informações de cep
 
+```js
     const cep = fetch('https://viacep.com.br/ws/09195090/json');
 
     cep.then((resposta) =>  resposta.json()).then((body) =>
@@ -23,6 +26,7 @@ Pegando informações de cep
         const  cidade  = document.querySelector('.conteudo');
         cidade.innerText  +=  body.localidade;
      });
+```
 
 Com JSON consigo pegar dados como se fosse um objeto.
 
@@ -33,7 +37,7 @@ Quando quero mostra o texto do jeito que ele é de fato, como por exemplo mostra
     return response.text();
 
 #### CSS
-
+```js
     const  css  =  fetch('./style.css');
 
     css.then((r) =>  r.text()).then((body) =>
@@ -44,10 +48,12 @@ Quando quero mostra o texto do jeito que ele é de fato, como por exemplo mostra
     conteudo.appendChild(style);
     });
 
+```
+
 #### HTML
 
 mostrando os elementos do html direto da sua página
-
+```js
     const  sobre  =  fetch('./sobre.html');
     const  div  =  document.createElement('div');
 
@@ -58,11 +64,11 @@ mostrando os elementos do html direto da sua página
     const  titulo  =  div.querySelector('h1');
     document.querySelector('h1').innerText  =  titulo.innerText;
     });
-
+```
 #### .blob
 
 Trás informações sobre uma imagem como tamanho, type , URL
-
+```js
     imgInfo.then((r) =>  r.blob()).then((body) =>
     {
     const  blobUrl  =  URL.createObjectURL(body); // me da um url unico
@@ -72,20 +78,21 @@ Trás informações sobre uma imagem como tamanho, type , URL
     console.log(imagemDom);
     });
 
+```
 #### .status
 
 Mostrando o status da conexão
-
+```js
     imgInfo.then((r) => {
 
     console.log(r.status);
 
     });
-
+```
 #### .clone()
 
 para duplicar uma informação do fetch, o fetch não permite usar text e json em seguida com clone é possivel
-
+```js
     fetch('https://viacep.com.br/ws/01001000/json/')
     .then((response) =>
     {
@@ -100,3 +107,4 @@ para duplicar uma informação do fetch, o fetch não permite usar text e json e
         console.log(text);
         });
     });
+```
