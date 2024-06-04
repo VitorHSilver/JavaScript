@@ -27,7 +27,7 @@ const res2 = document.querySelector('.res2');
 function atualizandoMoeda() {
      fetch('https://blockchain.info/ticker').then((r) =>
           r.json().then((btnJson) => {
-               res2.innerText += `R$ ${btnJson.BRL.buy}`.replace('.', ',');
+               res2.innerHTML += `<strong>R$ ${btnJson.BRL.buy}</strong>`.replace('.', ',');
           })
      );
 }
