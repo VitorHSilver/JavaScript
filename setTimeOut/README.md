@@ -22,6 +22,10 @@
     }
 
 #### setInterval mostra o valor a cada tempo
+
+    setInterval(atualizandoMoeda, 30000);
+
+
 Se não houver um break ou condição para encerramento como num FOR o setInterval segue fazendo sendo necessário 
 #### clearInterval para encerramento
 
