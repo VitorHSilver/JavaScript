@@ -1,4 +1,4 @@
-# setTimeOut
+# setTimeOut (ideal para mostrar em 'atraso')
 
  *Método assincrono que ativa o callback após tempo*.
 
@@ -21,7 +21,7 @@
     
     }
 
-#### setInterval mostra o valor a cada tempo
+#### setInterval mostra o valor a cada tempo (ideal para repetir)
 
     setInterval(atualizandoMoeda, 30000);
 
